@@ -12,9 +12,6 @@
 # - get fail2ban
 # - restart the system services
 #
-# @DEV - development / production tools...
-# - get docker
-#
 #  stack script variables...
 # -------------------------------------------------------
 # <udf name="hostname" label="Hostname"/>
@@ -23,6 +20,9 @@
 # <udf name="username" label="User Name"/>
 # <udf name="userpass" label="User Password"/>
 # -------------------------------------------------------
+
+# @DEV - https://github.com/jbaranski/linode/dev.sh
+source <ssinclude StackScriptID="11318">
 
 # @BASE
 function system_update {
@@ -119,11 +119,6 @@ function restart_services {
     done
 }
 
-# @DEV
-function get_docker {
-    curl -sSL https://get.docker.com/ubuntu/ | sudo sh
-}
-
 # @BASE
 system_update
 system_set_hostname
@@ -136,3 +131,6 @@ restart_services
 
 # @DEV
 get_docker
+get_java8
+get_ruby
+get_senchacmd
