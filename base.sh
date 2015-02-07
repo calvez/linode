@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# @author baransja - https://github.com/baransja/linode
+# @author jbaranski - https://github.com/jbaranski/linode
 #
-# @BASE - base stack script...
+# @BASE - base stack script... (adapted from https://www.linode.com/stackscripts/view/1)
 # - run system updates
 # - set the hostname
 # - make host entry
