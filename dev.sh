@@ -30,6 +30,7 @@ function get_ruby {
 }
 
 function get_senchacmd {
+    apt-get update
     apt-get install -y libfontconfig
     curl -O http://cdn.sencha.com/cmd/5.1.1.39/SenchaCmd-5.1.1.39-linux-x64.run.zip
     unzip SenchaCmd-5.1.1.39-linux-x64.run.zip
