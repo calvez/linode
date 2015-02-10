@@ -1,6 +1,8 @@
 # linode
 Automate the deployment of a custom system on top of Linodes default Ubuntu distribution image.
 
-@BASE - Do some administrative tasks and secure the box
+@BASE - Base stack script (do some administrative tasks and secure the box)...
 
-@DEV - Setup developer tools and services
+@CORE - Core development and production tools...
+
+@PYTHON - Python specific tools and packages...

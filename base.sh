@@ -12,19 +12,9 @@
 # - get fail2ban
 # - restart the system services
 #
-#  stack script variables...
-# -------------------------------------------------------
-# <udf name="hostname" label="Hostname"/>
-# <udf name="ipaddr" label="IP Address"/>
-# <udf name="fqdn" label="Fully Qualified Domain Name"/>
-# <udf name="username" label="User Name"/>
-# <udf name="userpass" label="User Password"/>
-# -------------------------------------------------------
+# requires the following stack script variables in the implementing script...
+# - hostname; ipaddr; fqdn; username; userpass
 
-# @DEV - https://github.com/jbaranski/linode/dev.sh
-source <ssinclude StackScriptID="11318">
-
-# @BASE
 function system_update {
     apt-get update
     apt-get -y install aptitude
@@ -118,19 +108,3 @@ function restart_services {
         rm -f /tmp/restart-$service
     done
 }
-
-# @BASE
-system_update
-system_set_hostname
-system_add_host_entry
-user_add_sudo
-ssh_disable_root
-config_iptables
-get_fail2ban
-restart_services
-
-# @DEV
-get_docker
-get_java8
-get_ruby
-get_senchacmd

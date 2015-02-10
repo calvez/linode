@@ -2,13 +2,10 @@
 #
 # @author jbaranski - https://github.com/jbaranski/linode
 #
-# @DEV - development / production tools...
-# - get docker
-# - get java 8
-# - get ruby
-# - get sencha cmd
+# @CORE - core development and production tools...
+# @PYTHON - python specific tools and packages...
 
-# @DEV
+# @CORE
 function get_docker {
     curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 }
@@ -29,6 +26,12 @@ function get_ruby {
     rm -rf /var/lib/apt/lists/*
 }
 
+function get_extjs {
+    curl -O http://cdn.sencha.com/ext/gpl/ext-5.1.0-gpl.zip
+    unzip ext-5.1.0-gpl.zip
+    rm -rf ext-5.1.0-gpl.zip
+}
+
 function get_senchacmd {
     apt-get update
     apt-get install -y libfontconfig
@@ -39,4 +42,14 @@ function get_senchacmd {
     PATH=$PATH:/home/Sencha/Cmd/5.1.1.39
     rm -f SenchaCmd-5.1.1.39-linux-x64.run
     rm -f SenchaCmd-5.1.1.39-linux-x64.run.zip
+}
+
+# @PYTHON
+function get_pip {
+    apt-get update
+    apt-get install python-pip -y
+}
+
+function get_python_praw {
+    pip install praw
 }
