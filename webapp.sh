@@ -2,7 +2,7 @@
 #
 # @author jbaranski - https://github.com/jbaranski/linode
 #
-#  stack script variables...
+# stack script variables...
 # -------------------------------------------------------
 # <udf name="hostname" label="Hostname"/>
 # <udf name="ipaddr" label="IP Address"/>
