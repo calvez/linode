@@ -28,6 +28,9 @@ restart_services
 
 # @CORE
 get_docker
+get_java8
+get_ruby
+get_senchacmd
 
 # @PYTHON
 get_pip
