@@ -44,10 +44,18 @@ function get_senchacmd {
     rm -f SenchaCmd-5.1.1.39-linux-x64.run.zip
 }
 
+function get_nginx {
+    add-apt-repository -y ppa:nginx/stable
+    apt-get update
+    apt-get install -y nginx
+    rm -rf /var/lib/apt/lists/*
+    chown -R www-data:www-data /var/lib/nginx
+}
+
 # @PYTHON
 function get_pip {
     apt-get update
-    apt-get install python-pip -y
+    apt-get install -y python-pip
 }
 
 function get_python_praw {
