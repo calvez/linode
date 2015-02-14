@@ -27,6 +27,7 @@ get_fail2ban
 restart_services
 
 # @CORE
+get_git
 get_java8
 get_ruby
 get_senchacmd

@@ -10,6 +10,11 @@ function get_docker {
     curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 }
 
+function get_git {
+    apt-get update
+    apt-get install -y git
+}
+
 function get_java8 {
     echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
     add-apt-repository -y ppa:webupd8team/java
@@ -50,6 +55,7 @@ function get_nginx {
     apt-get install -y nginx
     rm -rf /var/lib/apt/lists/*
     chown -R www-data:www-data /var/lib/nginx
+    cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
 }
 
 # @PYTHON
