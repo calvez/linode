@@ -56,6 +56,9 @@ function get_nginx {
     rm -rf /var/lib/apt/lists/*
     chown -R www-data:www-data /var/lib/nginx
     cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
+    curl -O https://raw.githubusercontent.com/jbaranski/linode/master/nginx.conf
+    cp nginx.conf /etc/nginx/
+    rm -f nginx.conf
 }
 
 # @PYTHON
