@@ -61,10 +61,11 @@ function get_nginx {
     curl -O https://raw.githubusercontent.com/jbaranski/linode/master/nginx/404.html
     curl -O https://raw.githubusercontent.com/jbaranski/linode/master/nginx/50x.html
     cp nginx.conf /etc/nginx/
+    rm -f nginx.conf
+    mkdir /var/www/html/errorpages
     cp 403.html /var/www/html/errorpages/
     cp 404.html /var/www/html/errorpages/
     cp 50x.html /var/www/html/errorpages/
-    rm -f nginx.conf
     rm -f 403.html
     rm -f 404.html
     rm -f 50x.html
