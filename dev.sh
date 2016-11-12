@@ -4,7 +4,8 @@
 #
 
 function get_docker {
-    curl -sSL https://get.docker.com/ | sudo sh
+    apt-get update
+    apt-get install docker.io
 }
 
 function get_git {
