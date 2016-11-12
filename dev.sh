@@ -5,7 +5,7 @@
 
 function get_docker {
     apt-get update
-    apt-get install docker.io
+    apt-get install -y docker.io
 }
 
 function get_git {
